@@ -6,3 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return "Hi!"
+
+@app.route("/healthcheck")
+def healthcheck():
+    return "ok"
