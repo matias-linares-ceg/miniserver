@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: 700504154032.dkr.ecr.us-east-1.amazonaws.com/tests/miniserver
+  repository: matiaslinaresceg/miniserver:1.1.0
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -51,7 +51,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - paths:
-        - host: "sentry.cegdev.net"
+        - host: "raspi.local"
           path: /
           pathType: Prefix
   tls: []
@@ -104,10 +104,5 @@ volumeMounts: []
 
 nodeSelector: {}
 
-tolerations:
-- key: "service"
-  operator: "Equal"
-  value: "common"
-  effect: "NoExecute"
 
 affinity: {}
