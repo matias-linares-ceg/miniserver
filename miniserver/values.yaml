@@ -49,11 +49,11 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - paths:
-        - host: "192.168.100.51"
-          path: /
-          pathType: Prefix
+    hosts:
+      - host: "192.168.100.51"
+        paths:
+          - path: /
+            pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
