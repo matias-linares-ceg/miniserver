@@ -8,8 +8,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 9476
       protocol: TCP
       name: http
   selector:
-    {{- include "miniserver.selectorLabels" . | nindent 4 }}
+  {{- include "miniserver.selectorLabels" . | nindent 4 }}
