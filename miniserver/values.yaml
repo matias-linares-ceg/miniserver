@@ -8,7 +8,7 @@ image:
   repository: matiaslinaresceg/miniserver
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -44,7 +44,7 @@ service:
   port: 5000
 
 ingress:
-  enabled: false
+  enabled: true
   className: "miniserver"
   annotations:
     kubernetes.io/ingress.class: nginx
