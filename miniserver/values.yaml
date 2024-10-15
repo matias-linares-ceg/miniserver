@@ -43,7 +43,7 @@ service:
   type: ClusterIP
   port: 5000
   env:
-    - VERSION: development
+    VERSION: development
 
 ingress:
   enabled: true
