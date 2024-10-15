@@ -49,6 +49,9 @@ spec:
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Chart.name }}
           {{- end }}
       {{- with .Values.volumes }}
       volumes:
