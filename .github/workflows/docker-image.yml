@@ -22,7 +22,7 @@ jobs:
         docker build . --file Dockerfile --tag "${DOCKER_IMAGE}:${_version}" --tag "${DOCKER_IMAGE}:latest"
     - name: Push to container registry
       run: |
-        echo $GITHUB_TOKEN | docker login ghcr.io -u matias-linares-ceg --password-stdin
+        echo ${{ github.token }} | docker login ghcr.io -u matias-linares-ceg --password-stdin
         _version=$(git rev-parse --short HEAD)
         docker push "${DOCKER_IMAGE}:${_version}" "${DOCKER_IMAGE}:latest"
 
