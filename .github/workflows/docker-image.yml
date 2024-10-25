@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_IMAGE: ghcr.io/matias-linares-ceg/miniserver
+    permissions: 
+      packages: write
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
