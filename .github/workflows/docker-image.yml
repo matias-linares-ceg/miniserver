@@ -12,8 +12,11 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE: ghcr.io/matias-linares-ceg/miniserver:$(date +%s)
+      DOCKER_IMAGE: ghcr.io/matias-linares-ceg/miniserver
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${DOCKER_IMAGE}
+      run: |
+        _version=$(date +%s)
+        echo "Building image ${DOCKER_IMAGE}:${_version}"
+        docker build . --file Dockerfile --tag "${DOCKER_IMAGE}:${_version}"
