@@ -43,8 +43,8 @@ service:
   type: ClusterIP
   port: 5000
   env:
-    VERSION: development
-    HOLA: 123
+    - VERSION: development
+    - HOLA: 123
 
 ingress:
   enabled: true
