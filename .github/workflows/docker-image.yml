@@ -19,4 +19,4 @@ jobs:
       run: |
         _version=$(date +%s)
         echo "Building image ${DOCKER_IMAGE}:${_version}"
-        docker build . --file Dockerfile --tag "${DOCKER_IMAGE}:${_version}"
+        docker build . --file Dockerfile --tag "${DOCKER_IMAGE}:${_version}" --tag "${DOCKER_IMAGE}:latest"
