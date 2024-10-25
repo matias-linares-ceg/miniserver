@@ -17,6 +17,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-        _version=$(date +%s)
+        _version=$(git rev-parse --short HEAD)
         echo "Building image ${DOCKER_IMAGE}:${_version}"
         docker build . --file Dockerfile --tag "${DOCKER_IMAGE}:${_version}" --tag "${DOCKER_IMAGE}:latest"
+    - name: Push to container registry
+      run: |
+        echo $GITHUB_TOKEN | docker login ghcr.io -u matias-linares-ceg --password-stdin
+        _version=$(git rev-parse --short HEAD)
+        docker push "${DOCKER_IMAGE}:${_version}" "${DOCKER_IMAGE}:latest"
+
