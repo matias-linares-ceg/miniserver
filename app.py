@@ -10,3 +10,7 @@ def index():
 @app.route("/healthcheck")
 def healthcheck():
     return "ok"
+
+@app.route("/hello")
+def hello():
+    return "Hello, hello world!"
