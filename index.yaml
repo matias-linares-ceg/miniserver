@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  miniserver:
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2025-01-03T19:52:02.771581963Z"
+    description: A Helm chart for Kubernetes
+    digest: 2fb2cefe775a20c43972df96cd8e6c4aa23e50c414bd52e28474478638594d2a
+    name: miniserver
+    type: application
+    urls:
+    - https://github.com/matias-linares-ceg/miniserver/releases/download/miniserver-0.1.3/miniserver-0.1.3.tgz
+    version: 0.1.3
+generated: "2025-01-03T19:52:02.771589026Z"
