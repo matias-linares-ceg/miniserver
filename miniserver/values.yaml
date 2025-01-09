@@ -51,10 +51,12 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
   hosts:
     - host:
       paths:
-        - path: /
+        - path: /miniserver/(.*)
           pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
