@@ -8,6 +8,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
+      # @mati: This is the port that is exposed for ingress
       targetPort: 5000
       protocol: TCP
       name: http
