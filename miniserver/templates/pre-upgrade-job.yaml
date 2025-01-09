@@ -26,5 +26,5 @@ spec:
       containers:
       - name: pre-upgrade-job
         image: "debian:12-slim"
-        command: ["/bin/sleep", "10m"]
+        command: ["/bin/sleep", "1s"]
         imagePullPolicy: IfNotPresent
