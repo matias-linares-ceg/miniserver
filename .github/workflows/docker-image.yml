@@ -35,7 +35,7 @@ jobs:
 
     - name: Trigger workflow
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       run: |
         _version=$(git rev-parse --short HEAD)
         echo version: $_version
