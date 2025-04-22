@@ -37,7 +37,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         _version=$(git rev-parse --short HEAD)
-        curl -L -X POST -H "Accept: application/vnd.github+json" \
+        echo version: $_version
+        curl -X POST -H "Accept: application/vnd.github+json" \
              -H "Authorization: Bearer $GITHUB_TOKEN" \
              -H "X-GitHub-Api-Version: 2022-11-28" \
              https://api.github.com/repos/matias-linares-ceg/actions/dispatches \
